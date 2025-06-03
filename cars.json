@@ -1,0 +1,42 @@
+[
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2023
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2024
+  },
+  {
+    "make": "Ford",
+    "model": "Mustang",
+    "year": 2023
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2023
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2024
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2023
+  },
+  {
+    "make": "Audi",
+    "model": "A4",
+    "year": 2024
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Passat",
+    "year": 2023
+  }
+]
