@@ -1,8 +1,11 @@
-# نظام ترجمة أكواد أعطال السيارات بلغة Rust
+# 🚀 Car DTC Translator Upgrade Guide
 
-## الهيكل العام للمشروع
+A guide to upgrade your Rust project to support multi-language translations for OBD-II DTCs, including 8 variations (4 Arabic dialects, 2 English types, 2 Swedish types).
 
-### ملف `Cargo.toml`
+---
+
+## 📦 `Cargo.toml`
+
 ```toml
 [package]
 name = "car_dtc_translator"
@@ -12,10 +15,14 @@ edition = "2021"
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-rayon = "1.8" # للمعالجة المتوازية (اختياري)
-### الكود الرئيسي (main.rs)
+rayon = "1.8" # Optional: for parallel processing
+```
 
-#### 1. تعريف هياكل البيانات
+---
+
+## 🧱 1. Data Structures (`main.rs`)
+
+```rust
 use serde::{Deserialize, Serialize};
 use std::fs;
 
@@ -33,17 +40,12 @@ struct DtcEntry {
 
 #[derive(Debug, Serialize, Deserialize)]
 struct TranslationSet {
-    // العربية بلهجاتها
     khaleeji: DialectTranslation,
     masri: DialectTranslation,
     shami: DialectTranslation,
     maghribi: DialectTranslation,
-    
-    // الإنجليزية
     english_formal: SimpleTranslation,
     english_simple: SimpleTranslation,
-    
-    // السويدية
     swedish_formal: SimpleTranslation,
     swedish_simple: SimpleTranslation,
 }
@@ -63,7 +65,13 @@ struct SimpleTranslation {
     cause: String,
     severity: String,
 }
-#### 2. دالة توليد الترجمات
+```
+
+---
+
+## 🔄 2. Translation Generator
+
+```rust
 fn generate_translations(description: &str, cause: &str, severity: &str) -> TranslationSet {
     TranslationSet {
         khaleeji: DialectTranslation {
@@ -116,42 +124,43 @@ fn generate_translations(description: &str, cause: &str, severity: &str) -> Tran
         },
     }
 }
-3. الدالة الرئيسية
-#### 3. الدالة الرئيسية
-    // 1. قراءة ملف JSON الأصلي
+```
+
+---
+
+## 🧠 3. Main Execution Function
+
+```rust
+fn main() -> std::io::Result<()> {
     let path = "dtc_codes.json";
-    let data = fs::read_to_string(path)?;
+    let data = std::fs::read_to_string(path)?;
     let mut dtc_list: Vec<DtcEntry> = serde_json::from_str(&data)?;
 
-    // 2. معالجة البيانات (باستخدام rayon للملفات الكبيرة)
     #[cfg(feature = "parallel")]
     dtc_list.par_iter_mut().for_each(|dtc| {
-        dtc.translations = Some(generate_translations(
-            &dtc.description,
-            &dtc.cause,
-            &dtc.severity
-        ));
+        dtc.translations = Some(generate_translations(&dtc.description, &dtc.cause, &dtc.severity));
     });
 
     #[cfg(not(feature = "parallel"))]
     for dtc in dtc_list.iter_mut() {
-        dtc.translations = Some(generate_translations(
-            &dtc.description,
-            &dtc.cause,
-            &dtc.severity
-        ));
+        dtc.translations = Some(generate_translations(&dtc.description, &dtc.cause, &dtc.severity));
     }
 
-    // 3. حفظ الملف المحدث
     let updated_json = serde_json::to_string_pretty(&dtc_list)?;
-    fs::write(path, updated_json)?;
-    
-    println!("✅ تم تحديث الملف بنجاح بإضافة جميع الترجمات!");
+    std::fs::write(path, updated_json)?;
+
+    println!("✅ File updated successfully with translations.");
     Ok(())
 }
-مثال لملف الإدخال والإخراج
-ملف الإدخال (dtc_codes.json)
-json
+```
+
+---
+
+## 📂 Input Example
+
+**File:** `dtc_codes.json`
+
+```json
 [
   {
     "code": "U0500",
@@ -161,8 +170,13 @@ json
     "severity": "Critical"
   }
 ]
-ملف الإخراج (بعد المعالجة)
-json
+```
+
+---
+
+## 📤 Output Example
+
+```json
 [
   {
     "code": "U0500",
@@ -183,27 +197,34 @@ json
         "cause": "Communication problem between...",
         "severity": "Critical - Requires immediate attention"
       }
-      // ... باقي الترجمات
+      // ... other translations
     }
   }
 ]
-نصائح للاستخدام
-للملفات الكبيرة (4000+ عطل):
+```
 
-bash
+---
+
+## 💡 Usage Tips
+
+### For large files:
+
+```bash
 cargo run --release --features "parallel"
-لإنشاء ملف جديد بدل تعديل الملف الأصلي:
+```
 
-rust
+### Save to a new file:
+
+```rust
 fs::write("dtc_codes_translated.json", updated_json)?;
-لإضافة لغات جديدة:
+```
 
-أضف حقول جديدة في TranslationSet
+### Add new languages:
 
-أضف منطق الترجمة في generate_translations
+- Add fields to `TranslationSet`
+- Extend `generate_translations` logic
 
-لتحسين الأداء:
+### Performance boost:
 
-استخدم BufReader للملفات الكبيرة جداً
-
-فكر في استخدام قاعدة بيانات مثل SQLite إذا تجاوزت البيانات 10,000 سجل
+- Use `BufReader` for very large files
+- Consider SQLite for >10k entries
