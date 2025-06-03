@@ -1,0 +1,511 @@
+{
+  "metadata": {
+    "title": "ODB Diagnostic Trouble Codes Database",
+    "description": "Comprehensive database of automotive diagnostic trouble codes (DTCs) based on SAE J2012 and ISO 15031 standards",
+    "version": "1.0",
+    "author": "Abdulwahed",
+    "repository": "https://github.com/abdulwahed-sweden/odb-codes-to-json",
+    "generated_date": "2025-06-02T16:00:29.537622",
+    "data_source": "OBD-II Diagnostic Trouble Codes Database",
+    "standards": [
+      "SAE J2012",
+      "ISO 15031"
+    ],
+    "total_codes": 4316,
+    "code_breakdown": {
+      "P_codes": 3541,
+      "B_codes": 134,
+      "C_codes": 85,
+      "U_codes": 556
+    },
+    "categories": [
+      "Body",
+      "Chassis",
+      "Network",
+      "Powertrain"
+    ],
+    "systems": [
+      "Anti-lock Brake System",
+      "Auxiliary Emission Controls",
+      "Communication Bus",
+      "Computer Output Circuit",
+      "Data Integrity",
+      "Emissions System",
+      "Fuel Injector Circuit",
+      "Fuel and Air Metering",
+      "General",
+      "Hybrid/Electric Vehicle",
+      "Ignition System",
+      "Lighting System",
+      "Manufacturer Specific",
+      "Restraint System",
+      "Seat System",
+      "Software",
+      "Steering System",
+      "Tire Pressure Monitoring",
+      "Transmission",
+      "Vehicle Dynamics",
+      "Vehicle Speed Control",
+      "Wheel Speed Sensor"
+    ],
+    "system_breakdown": {
+      "Body": [
+        "General",
+        "Lighting System",
+        "Restraint System",
+        "Seat System"
+      ],
+      "Chassis": [
+        "Anti-lock Brake System",
+        "General",
+        "Steering System",
+        "Tire Pressure Monitoring",
+        "Vehicle Dynamics",
+        "Wheel Speed Sensor"
+      ],
+      "Network": [
+        "Communication Bus",
+        "Data Integrity",
+        "General",
+        "Software"
+      ],
+      "Powertrain": [
+        "Auxiliary Emission Controls",
+        "Computer Output Circuit",
+        "Emissions System",
+        "Fuel Injector Circuit",
+        "Fuel and Air Metering",
+        "General",
+        "Hybrid/Electric Vehicle",
+        "Ignition System",
+        "Manufacturer Specific",
+        "Transmission",
+        "Vehicle Speed Control"
+      ]
+    },
+    "severity_levels": [
+      "Info",
+      "Warning",
+      "Critical"
+    ],
+    "severity_breakdown": {
+      "Info": 1621,
+      "Critical": 545,
+      "Warning": 2150
+    },
+    "code_type_descriptions": {
+      "P": "Powertrain - Engine, transmission, and related systems",
+      "B": "Body - Interior systems, lighting, security, etc.",
+      "C": "Chassis - Braking, steering, suspension systems",
+      "U": "Network - Communication and control module issues"
+    }
+  },
+  "diagnostic_codes": [
+    {
+      "code": "P0000",
+      "description": "ISO/SAE Reserved",
+      "category": "Powertrain",
+      "system": "Fuel and Air Metering",
+      "severity": "Info"
+    },
+    {
+      "code": "P0001",
+      "description": "Fuel Volume Regulator Control Circuit/Open",
+      "category": "Powertrain",
+      "system": "Fuel and Air Metering",
+      "severity": "Critical"
+    },
+    {
+      "code": "P0002",
+      "description": "Fuel Volume Regulator Control Circuit Range/Performance",
+      "category": "Powertrain",
+      "system": "Fuel and Air Metering",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0003",
+      "description": "Fuel Volume Regulator Control Circuit Low",
+      "category": "Powertrain",
+      "system": "Fuel and Air Metering",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0004",
+      "description": "Fuel Volume Regulator Control Circuit High",
+      "category": "Powertrain",
+      "system": "Fuel and Air Metering",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0010",
+      "description": "Intake Camshaft Position Actuator Circuit/Open (Bank 1)",
+      "category": "Powertrain",
+      "system": "Ignition System",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0011",
+      "description": "Intake Camshaft Position Timing - Over-Advanced (Bank 1)",
+      "category": "Powertrain",
+      "system": "Ignition System",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0100",
+      "description": "Mass or Volume Air Flow Circuit Malfunction",
+      "category": "Powertrain",
+      "system": "Fuel and Air Metering",
+      "severity": "Critical"
+    },
+    {
+      "code": "P0171",
+      "description": "System Too Lean (Bank 1)",
+      "category": "Powertrain",
+      "system": "Fuel and Air Metering",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0300",
+      "description": "Random/Multiple Cylinder Misfire Detected",
+      "category": "Powertrain",
+      "system": "Ignition System",
+      "severity": "Critical"
+    },
+    {
+      "code": "P0420",
+      "description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "category": "Powertrain",
+      "system": "Emissions System",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0500",
+      "description": "Vehicle Speed Sensor Malfunction",
+      "category": "Powertrain",
+      "system": "Vehicle Speed Control",
+      "severity": "Warning"
+    },
+    {
+      "code": "P0700",
+      "description": "Transmission Control System Malfunction",
+      "category": "Powertrain",
+      "system": "Transmission",
+      "severity": "Critical"
+    },
+    {
+      "code": "B0001",
+      "description": "Driver Frontal Stage 1 Deployment Control (Subfault)",
+      "category": "Body",
+      "system": "Restraint System",
+      "severity": "Info"
+    },
+    {
+      "code": "B0002",
+      "description": "Driver Frontal Stage 2 Deployment Control (Subfault)",
+      "category": "Body",
+      "system": "Restraint System",
+      "severity": "Info"
+    },
+    {
+      "code": "B0010",
+      "description": "Passenger Frontal Stage 1 Deployment Control",
+      "category": "Body",
+      "system": "Restraint System",
+      "severity": "Warning"
+    },
+    {
+      "code": "B0020",
+      "description": "Left Side Airbag Deployment Control",
+      "category": "Body",
+      "system": "Restraint System",
+      "severity": "Warning"
+    },
+    {
+      "code": "B1000",
+      "description": "ECU Malfunction",
+      "category": "Body",
+      "system": "General",
+      "severity": "Critical"
+    },
+    {
+      "code": "B1100",
+      "description": "Battery Voltage Low",
+      "category": "Body",
+      "system": "General",
+      "severity": "Warning"
+    },
+    {
+      "code": "B1200",
+      "description": "Climate Control Push Button Circuit Failure",
+      "category": "Body",
+      "system": "General",
+      "severity": "Info"
+    },
+    {
+      "code": "B1300",
+      "description": "Power Door Lock Circuit Failure",
+      "category": "Body",
+      "system": "General",
+      "severity": "Info"
+    },
+    {
+      "code": "B1400",
+      "description": "Wiper Motor Circuit Failure",
+      "category": "Body",
+      "system": "General",
+      "severity": "Warning"
+    },
+    {
+      "code": "B2000",
+      "description": "Driver Seat Position Sensor Circuit Malfunction",
+      "category": "Body",
+      "system": "Seat System",
+      "severity": "Info"
+    },
+    {
+      "code": "B2100",
+      "description": "Ignition Switch Circuit Failure",
+      "category": "Body",
+      "system": "General",
+      "severity": "Critical"
+    },
+    {
+      "code": "B2200",
+      "description": "Window Motor Circuit Failure",
+      "category": "Body",
+      "system": "General",
+      "severity": "Info"
+    },
+    {
+      "code": "B2500",
+      "description": "Lamp Headlamp Circuit Failure",
+      "category": "Body",
+      "system": "Lighting System",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0001",
+      "description": "TCS Control Channel \"A\" Valve 1 (Subfault)",
+      "category": "Chassis",
+      "system": "Anti-lock Brake System",
+      "severity": "Info"
+    },
+    {
+      "code": "C0010",
+      "description": "Left Front Inlet Control (Subfault)",
+      "category": "Chassis",
+      "system": "Anti-lock Brake System",
+      "severity": "Info"
+    },
+    {
+      "code": "C0035",
+      "description": "Left Front Wheel Speed Sensor Circuit",
+      "category": "Chassis",
+      "system": "Wheel Speed Sensor",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0040",
+      "description": "Right Front Wheel Speed Sensor Circuit",
+      "category": "Chassis",
+      "system": "Wheel Speed Sensor",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0050",
+      "description": "Right Rear Wheel Speed Sensor Circuit",
+      "category": "Chassis",
+      "system": "Wheel Speed Sensor",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0100",
+      "description": "ABS Hydraulic Pump Motor Circuit",
+      "category": "Chassis",
+      "system": "Anti-lock Brake System",
+      "severity": "Critical"
+    },
+    {
+      "code": "C0200",
+      "description": "Vehicle Speed Sensor Circuit",
+      "category": "Chassis",
+      "system": "Vehicle Dynamics",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0300",
+      "description": "Rear Speed Sensor Circuit",
+      "category": "Chassis",
+      "system": "Wheel Speed Sensor",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0500",
+      "description": "Steering Position Sensor Circuit",
+      "category": "Chassis",
+      "system": "Steering System",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0600",
+      "description": "Steering Position Sensor Range/Performance",
+      "category": "Chassis",
+      "system": "Steering System",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0700",
+      "description": "Tire Pressure Monitor System Malfunction",
+      "category": "Chassis",
+      "system": "Tire Pressure Monitoring",
+      "severity": "Warning"
+    },
+    {
+      "code": "C0750",
+      "description": "Left Front Tire Pressure Sensor Circuit",
+      "category": "Chassis",
+      "system": "Tire Pressure Monitoring",
+      "severity": "Info"
+    },
+    {
+      "code": "U0001",
+      "description": "High Speed CAN Communication Bus",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Warning"
+    },
+    {
+      "code": "U0002",
+      "description": "High Speed CAN Communication Bus Performance",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Warning"
+    },
+    {
+      "code": "U0100",
+      "description": "Lost Communication With ECM/PCM \"A\"",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Critical"
+    },
+    {
+      "code": "U0101",
+      "description": "Lost Communication With TCM",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Critical"
+    },
+    {
+      "code": "U0121",
+      "description": "Lost Communication With Anti-Lock Brake System Module",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Critical"
+    },
+    {
+      "code": "U0140",
+      "description": "Lost Communication With Body Control Module",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Warning"
+    },
+    {
+      "code": "U0200",
+      "description": "Lost Communication With Door Control Module \"A\"",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Info"
+    },
+    {
+      "code": "U0300",
+      "description": "Software Incompatibility with ECM/PCM",
+      "category": "Network",
+      "system": "Software",
+      "severity": "Warning"
+    },
+    {
+      "code": "U0400",
+      "description": "Invalid Data Received From ECM/PCM \"A\"",
+      "category": "Network",
+      "system": "Data Integrity",
+      "severity": "Warning"
+    },
+    {
+      "code": "U0500",
+      "description": "Invalid Data Received From Multiple Modules",
+      "category": "Network",
+      "system": "Data Integrity",
+      "severity": "Critical"
+    },
+    {
+      "code": "U1000",
+      "description": "Class 2 Data Link Malfunction",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Critical"
+    },
+    {
+      "code": "U1100",
+      "description": "Lost Communication With Fuel Pump Control Module",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Warning"
+    },
+    {
+      "code": "U1200",
+      "description": "Lost Communication With Instrument Panel Control Module",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Warning"
+    },
+    {
+      "code": "U1300",
+      "description": "Lost Communication With Power Steering Control Module",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Warning"
+    },
+    {
+      "code": "U1400",
+      "description": "Implausible Engine Torque Signal Received",
+      "category": "Network",
+      "system": "Data Integrity",
+      "severity": "Warning"
+    },
+    {
+      "code": "U1500",
+      "description": "Vehicle Speed Information Circuit Invalid",
+      "category": "Network",
+      "system": "Data Integrity",
+      "severity": "Warning"
+    },
+    {
+      "code": "U1900",
+      "description": "CAN Communication Bus Fault",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Critical"
+    },
+    {
+      "code": "U2000",
+      "description": "Audio/Entertainment Bus Malfunction",
+      "category": "Network",
+      "system": "Communication Bus",
+      "severity": "Info"
+    },
+    {
+      "code": "U2100",
+      "description": "Configuration Error",
+      "category": "Network",
+      "system": "General",
+      "severity": "Warning"
+    },
+    {
+      "code": "U3000",
+      "description": "Control Module General Checksum Failure",
+      "category": "Network",
+      "system": "Software",
+      "severity": "Critical"
+    }
+  ]
+}
